@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Velocity | Premium Typing Experience</title>
+  <meta name="description"
+    content="Ultimate typing speed measurement game with neon aesthetics and real-time WPM calculation." />
+</head>
+
+<body>
+  <div id="app">
+    <div id="game-root">
+      <!-- Main Menu Screen -->
+      <div id="menu-screen" class="screen active">
+        <h1>NEON VELOCITY</h1>
+        <div class="card">
+          <div style="text-align: center;">
+            <button id="start-btn" class="btn">Start Game</button>
+          </div>
+          <div class="ranking-section">
+            <h3 style="margin: 1.5rem 0 0.5rem; color: var(--text-muted);">Local Leaderboard</h3>
+            <div id="leaderboard-list" class="ranking-list">
+              <!-- Leaderboard items will be injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Screen -->
+      <div id="game-screen" class="screen">
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-label">WPM</div>
+            <div id="wpm-display" class="stat-value">0</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Accuracy</div>
+            <div id="accuracy-display" class="stat-value">100%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Target</div>
+            <div id="score-display" class="stat-value">0/0</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+          <div id="typing-area">
+            <div id="display-text" class="display-text">Ready...</div>
+            <div id="kana-container" class="kana-container"></div>
+            <div id="romaji-guide" class="romaji-guide"></div>
+            <div id="input-buffer" class="input-buffer"></div>
+          </div>
+        </div>
+
+        <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+          Type the characters exactly as shown.
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div id="result-screen" class="screen">
+        <h1>RESULT</h1>
+        <div class="card" style="text-align: center;">
+          <div id="new-record-msg"
+            style="color: var(--secondary-color); font-weight: bold; display: none; margin-bottom: 1rem;">
+            NEW RECORD!
+          </div>
+          <div class="stats-bar">
+            <div class="stat-item">
+              <div class="stat-label">Final WPM</div>
+              <div id="final-wpm" class="stat-value">0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Accuracy</div>
+              <div id="final-accuracy" class="stat-value">0%</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+            <button id="retry-btn" class="btn">Retry</button>
+            <button id="home-btn" class="btn btn-secondary">Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-glow"></div>
+  <div class="bg-glow-2"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
